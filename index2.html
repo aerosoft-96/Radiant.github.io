@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiant Thai | Elite Hair Restoration Concierge</title>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #D4AF37; /* Gold for luxury */
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --text-gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            margin-left: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            /* The 'linear-gradient' acts as a dark overlay so your white text stays readable */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('file:///C:/Users/User/Downloads/hero-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Optional: adds a slight parallax effect */
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            background: var(--light);
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* The AI Vision Section */
+        .ai-section {
+            display: flex;
+            align-items: center;
+            padding: 100px 10%;
+        }
+
+        .ai-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .ai-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .ai-text .highlight {
+            color: var(--accent);
+        }
+
+        .ai-visual {
+            flex: 1;
+            background: var(--primary);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            top: 0;
+            animation: scan 2s infinite linear;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        @keyframes scan {
+            0% { top: 0; opacity: 0;}
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0;}
+        }
+
+        /* Form Section */
+        .waitlist {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button.submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 10%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .ai-section { flex-direction: column; }
+            .ai-text { padding-right: 0; margin-bottom: 40px; }
+            .nav-links { display: none; } /* Simplified for mock */
+        }
+	/* Practitioners Section */
+        .practitioners {
+            padding: 100px 5%;
+            background: var(--white);
+            text-align: left;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+
+        .practitioner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .practitioner-card {
+            background: #f9f9f9; /* Subtle light background like the photo */
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .practitioner-info {
+            padding: 30px;
+            border-left: 1px solid #eee; /* Vertical line detail from photo */
+        }
+
+        .practitioner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .practitioner-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .practitioner-role {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .practitioner-creds {
+            font-size: 0.9rem;
+            color: #999;
+            font-weight: 400;
+        }
+	/* Pricing Section */
+        .pricing {
+            padding: 100px 10%;
+            background: var(--light);
+        }
+
+        .price-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-collapse: collapse;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .price-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .price-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-category {
+            font-weight: 700;
+            color: var(--accent);
+            background: #fdfdfd;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .price-value {
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Radiant<span></div>
+        <div class="nav-links">
+            <a href="#features">The Experience</a>
+            <a href="#ai">AI Concierge</a>
+            <a href="#network">The Specialists Network</a>
+            <a href="#contact" class="cta-btn">Start Assessment</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Restore Your Crown.<br>Radiate Your Confidence.</h1>
+            <p>Your personal AI-assistant connecting you to Bangkok’s elite Hair Wellness specialists. Frictionless travel. Verified excellence.</p>
+            <a href="#contact" class="cta-btn" style="padding: 15px 40px; font-size: 1rem;">Start Your Journey</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature-card">
+            <div class="icon">💉</div>
+            <h3>Advanced PRP Injection</h3>
+            <p>Utilizing high-concentration Platelet-Rich Plasma to stimulate dormant follicles and thicken existing hair without surgery.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🧬</div>
+            <h3>Precision FUE & DHI</h3>
+            <p>Elite-level follicular unit extraction ensuring natural hairlines, maximum density, and virtually zero visible scarring.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Medical Management</h3>
+            <div class="icon">💊</div>
+            <p>Prescription-strength hair loss blockers and topical therapies curated by Thailand's leading clinical hair directors.</p>
+        </div>
+    </section>
+	<section id="network" class="practitioners">
+        <h2 class="section-title">Clinical <span class="highlight">Excellence</span></h2>
+        
+        <div class="practitioner-grid">
+            <div class="practitioner-card">
+                <div class="practitioner-info">
+                    <h3 class="practitioner-name">Danielle Brightman</h3>
+                    <p class="practitioner-role">Clinical Director</p>
+                    <p class="practitioner-creds">MPharm PgDip PCert</p>
+                </div>
+                <img src="https://via.placeholder.com/400x500" alt="Danielle Brightman" class="practitioner-image">
+            </div>
+
+            <div class="practitioner-card">
+                <div class="practitioner-info">
+                    <h3 class="practitioner-name">Dr David Weinstein</h3>
+                    <p class="practitioner-role">Men's Health Medical Lead</p>
+                    <p class="practitioner-creds">MBBS MRCGP PGCERT Med Ed.</p>
+                </div>
+                <img src="https://via.placeholder.com/400x500" alt="Dr David Weinstein" class="practitioner-image">
+            </div>
+
+            <div class="practitioner-card">
+                <div class="practitioner-info">
+                    <h3 class="practitioner-name">Mo Dekmak</h3>
+                    <p class="practitioner-role">Head of Clinical Product</p>
+                    <p class="practitioner-creds">MPharm PgDip IPresc</p>
+                </div>
+                <img src="https://via.placeholder.com/400x500" alt="Mo Dekmak" class="practitioner-image">
+            </div>
+        </div>
+    </section>
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Investment <span class="highlight">Guide</span></h2>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Procedure</th>
+                    <th style="text-align: right;">Starting Price (THB)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="2" class="price-category">Hair Restoration</td></tr>
+                <tr>
+                    <td>FUE Transplant (per 1,000 grafts)</td>
+                    <td class="price-value">120,000</td>
+                </tr>
+                <tr>
+                    <td>Hair PRP Therapy (per session)</td>
+                    <td class="price-value">16,000</td>
+                </tr>
+                <tr>
+                    <td>HMPF (Multi-Peptide Factor)</td>
+                    <td class="price-value">50,000</td>
+                </tr>
+
+                <tr><td colspan="2" class="price-category">Facial Aesthetics</td></tr>
+                <tr>
+                    <td>Closed Rhinoplasty (First Time)</td>
+                    <td class="price-value">35,000</td>
+                </tr>
+                <tr>
+                    <td>Upper Eyelid Surgery</td>
+                    <td class="price-value">25,000</td>
+                </tr>
+                <tr>
+                    <td>Lipofilling (Full Face)</td>
+                    <td class="price-value">50,000</td>
+                </tr>
+
+                <tr><td colspan="2" class="price-category">Body & Breast</td></tr>
+                <tr>
+                    <td>Vaser Liposuction (First 2 points)</td>
+                    <td class="price-value">120,000</td>
+                </tr>
+                <tr>
+                    <td>Breast Augmentation (Mentor Round)</td>
+                    <td class="price-value">160,000</td>
+                </tr>
+                <tr>
+                    <td>Mini Tummy Tuck (Abdominoplasty)</td>
+                    <td class="price-value">180,000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: center; margin-top: 30px; color: #888; font-size: 0.8rem;">
+            *Prices are indicative based on TRIA Medical Wellness standards. Final quotes subject to assessment.
+        </p>
+    </section>	
+    <section id="ai" class="ai-section">
+        <div class="ai-text">
+            <h2>The <span class="highlight">Radiant</span> Master Agent</h2>
+            <p>Start now. Just tell us about you. Radiant automates the entire journey.</p>
+            <br>
+            <ul style="list-style: none; color: #666;">
+                <li style="margin-bottom: 10px;">✓ Instant Treatments Identification</li>
+                <li style="margin-bottom: 10px;">✓ Personalized Medical Journey Plan</li>
+                <li style="margin-bottom: 10px;">✓ Seamless Specialists Consultation</li>
+            </ul>
+        </div>
+        <div class="ai-visual">
+            <div class="scan-line"></div>
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 10px;">AI Analysis In Progress</h3>
+                <p style="font-family: monospace; opacity: 0.7;">Scanning Donor Area...<br>Calculating Density...<br>Matching Protocol...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="waitlist">
+        <h2>Begin Your Assessment</h2>
+        <p style="color: #666; margin-bottom: 30px;">Get a free manual pre-consultation brief while our AI platform is in Beta.</p>
+        
+        <div class="form-container">
+            <form onsubmit="event.preventDefault(); alert('Thank you. A Radiant specialist will contact you shortly with your brief.');">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <select>
+                        <option value="" disabled selected>Primary Concern</option>
+                        <option value="receding">Receding Hairline</option>
+                        <option value="crown">Thinning Crown</option>
+                        <option value="maintenance">Preventative / Medicine</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Get My Restoration Plan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Radiant Thai Medical Concierge. Based in Bangkok.</p>
+        <p style="margin-top: 10px; opacity: 0.6;">Specializing in FUE, DHI, and Stem Cell Therapy.</p>
+    </footer>
+
+</body>
+</html>
